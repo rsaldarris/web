@@ -31,4 +31,4 @@ def guardarSensor():
     print("GUARDAR")
     return (listarCultivos())
 
-app.run(port=8000,debug = True)
+#app.run(port=8000,debug = True)
