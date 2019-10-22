@@ -12,7 +12,7 @@ producto_list = ['Leche','Cacao','Carne','Flores','Hortalizas']
 
 @app.route('/listarCultivo',methods = ['GET']) 
 def listarCultivos():
-    cultivos = requests.get('http://localhost:5000/tipoCultivo').json()
+    cultivos = requests.get('https://api-evergreen-422.azurewebsites.net/tipoCultivo').json()
     return render_template('listarCultivo.html',cultivos = cultivos)
 
 @app.route('/crearCultivo',methods= ['GET'])
@@ -27,7 +27,7 @@ def guardarSensor():
     sensor['latitud'] = float(sensor['latitud'])
     sensor['longitud'] = float(sensor['longitud'])
     sensor['area'] = int(sensor['area'])
-    requests.post('http://localhost:5000/tipoCultivo',json=sensor)
+    requests.post('https://api-evergreen-422.azurewebsites.net/tipoCultivo',json=sensor)
     print("GUARDAR")
     return (listarCultivos())
 
